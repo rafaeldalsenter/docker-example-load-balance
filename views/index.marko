@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loja de Livros</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+	<link href="css/estilos.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Alura Books</a>
+		</div>
+	</nav>
+	<div class="container page-wrap">
+		<div class="row">	
+			<for(book in data.books)>
+				<div class="col-md-3 col-sm-6 hero-feature text-center">
+				<div class="thumbnail">
+					<img src="img/${book.cover}" alt="">
+					<div class="caption">
+						<h3>${book.name}</h3>
+						<p>${book.description}</p>
+						<p>${book.price}</p>
+						<p>
+							<a href="#" class="btn btn-primary">Comprar!</a><a href="#" class="btn btn-default">Detalhes</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			</for>		
+		</div>	
+	</div>
+	<footer class="site-footer">
+		<p>Todos os direitos reservados</p>
+	</footer>
+	
+</body>
+</html>

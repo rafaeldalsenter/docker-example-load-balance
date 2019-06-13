@@ -1,0 +1,30 @@
+{
+  "name": "alura-docker",
+  "version": "1.0.0",
+  "description": "Projeto de Docker para o curso da Alura",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "marko": "^4.4.21",
+    "mongoose": "^4.11.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasquintanilha/alura-docker.git"
+  },
+  "keywords": [
+    "docker",
+    "alura"
+  ],
+  "author": "Douglas Quintanilha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/douglasquintanilha/alura-docker/issues"
+  },
+  "homepage": "https://github.com/douglasquintanilha/alura-docker#readme"
+}
