@@ -1,0 +1,60 @@
+version: '3'
+services:
+  nginx:
+    build:
+      dockerfile: ./docker/nginx.dockerfile
+      context: .
+    image: nginx
+    container_name: container-lb
+    ports:
+      - "80:80"
+    networks: 
+      - minha-rede
+    depends_on:
+      - "app1"
+      - "app2"
+      - "app3"
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: container-sql
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Docker12345"
+      ACCEPT_EULA: "Y"
+    networks: 
+      - minha-rede
+  
+  app1:
+    image: docker-example-app
+    container_name: container-app1
+    ports:
+      - "5000"
+    networks: 
+      - minha-rede
+    depends_on:
+      - "sqlserver"
+
+  app2:
+    image: docker-example-app
+    container_name: container-app2
+    ports:
+      - "5000"
+    networks: 
+      - minha-rede
+    depends_on:
+      - "sqlserver"
+          
+  app3:
+    image: docker-example-app
+    container_name: container-app3
+    ports:
+      - "5000"
+    networks: 
+      - minha-rede
+    depends_on:
+      - "sqlserver"
+networks: 
+    minha-rede:
+        driver: bridge
